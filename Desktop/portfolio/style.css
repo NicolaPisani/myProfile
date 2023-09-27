@@ -1,0 +1,335 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+ul,
+li {
+
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #1dd8fec5;
+}
+
+/* Stile globale per il corpo della pagina */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  max-width: 90%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto; /* Centra il contenuto orizzontalmente */
+}
+
+/* Stile dell'header e della barra di navigazione */
+header {
+  background-color: #000000;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #1dd8fe;
+  font-weight: bold;
+  font-size: large;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #fec44d;
+
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 40px;
+}
+
+.pulse-animation {
+  animation: pulse 8s infinite;
+}
+
+/* Definisci l'animazione CSS "pulse" */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+section h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1dd8fe;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+section h1:hover {
+  color: #fec44d;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-image {
+  width: 600px;
+  margin: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Aggiungi stili per il testo (opzionale) */
+#about p {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 40px;
+  color: #fec44d;
+  word-spacing: 8px;
+  transition: color 0.5s;
+}
+
+#about p:hover {
+  color: #1dd8fe;
+}
+
+#portfolio {
+    text-align: center;
+    background-color: #000000;
+    color: rgb(0, 0, 0);
+    padding: 80px;
+}
+
+.card-container {
+     display: flex;
+    flex-direction: row; /* Imposta la direzione orizzontale */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Impedisci il wrap delle card su più righe */
+    overflow-x: auto; /* Scorri orizzontalmente se necessario */
+    padding: 20px; /* Aggiungi spazio ai lati delle card */
+}
+
+
+.card {
+    width: 320px; /* Rendi le card un po' più grandi */
+    height: 360px; /* Rendi le card un po' più grandi */
+    margin: 0 20px; /* Aggiungi spazio tra le card */
+    perspective: 1000px;
+}
+
+.card-front img {
+    max-width: 100%; /* Imposta la larghezza massima dell'immagine al 100% della larghezza della card */
+    max-height: 100%; /* Imposta l'altezza massima dell'immagine al 100% dell'altezza della card */
+    display: block; /* Rimuove eventuali spazi vuoti intorno all'immagine */
+    margin: 0 auto; /* Centra l'immagine orizzontalmente nella card */
+transform: scale(1); /* Scala normale */
+    transition: transform 0.3s ease; /* Aggiungi una transizione per un effetto graduale */
+     max-width: 100%;
+  height: auto;
+}
+
+.card-front:hover img {
+    transform: scale(0.6); /* Zoom in all'hover */
+}
+
+.card-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s;
+}
+
+.card:hover .card-wrapper {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+
+}
+
+.card-front {
+ background:  linear-gradient(135deg, #37363444, #110b0037);
+     border: solid #00d5ff14;
+}
+
+.card-back {
+ background:  linear-gradient(135deg, #37363444, #110b0037); /* Gradient diverso per il retro */
+    transform: rotateY(180deg);
+    border: solid #1dd8fe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fec44d;
+}
+
+.card-back p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #1dd8fe;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #fec44d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #1dd8fe;
+}
+
+.card-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Stile delle sezioni */
+section {
+  padding: 40px;
+  margin-top: 10px;
+}
+
+/* Stile per il footer */
+footer {
+  background-color: #000000;
+  text-align: center;
+  margin-top: 10px;
+   padding-top: 100px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.icon-container img {
+  width: 120px;
+  margin: 0 80px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  /* Aggiungi qui i tuoi stili per dispositivi mobili */
+  body {
+ max-width: 90%;
+  margin: 0 auto; /* Centra il contenuto orizzontalmente */
+     font-size: 16px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .container {
+  padding: 1em;
+}
+img {
+  max-width: 100%;
+  height: auto; /* Mantiene il rapporto di aspetto originale */
+}
+.card {
+    width: 100%; /* Riduci la larghezza delle card per dispositivi mobili */
+    height: auto; /* L'altezza si adatterà in base al contenuto */
+  }
+  
+  .card-front img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+  
+  
+  
+
+
+
